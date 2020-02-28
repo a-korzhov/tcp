@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/sirupsen/logrus"
 	"log"
 	"net"
 	"strings"
@@ -27,7 +26,7 @@ func main() {
 		if err != nil {
 			log.Fatalln(err)
 		}
-		logrus.Println("Message received", message)
+		log.Println("Message received", message)
 		newMessage := strings.ToUpper(message)
 
 		_, err = conn.Write([]byte(newMessage + "\n"))
